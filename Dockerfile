@@ -16,6 +16,10 @@ RUN \
   apt-get -y install git && \
   apt-get -y install sshpass
 
+# Add concourse python modules
+RUN \
+  pip3 install git+https://github.com/lorands/concourse-python-tooling.git
+
 RUN pip3 install --upgrade awscli cloudfoundry-client
 
 CMD ["/bin/bash"]
